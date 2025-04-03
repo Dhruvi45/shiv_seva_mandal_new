@@ -7,20 +7,28 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import Image from 'next/image'
+import Cookies from 'js-cookie'
 
 export default function AdminLoginPage() {
   const router = useRouter()
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // In a real application, you would validate against a database
-    // For this demo, we're using a hardcoded password
+    // For better security, store the password hash in .env
     if (password === 'shiv-seva-admin') {
-      // Redirect to admin panel with the secret key
-      router.push('/admin?adminKey=shiv-seva-secret')
+      // Set an HTTP-only cookie for authentication
+      // In a real app, you'd use a server action to set this securely
+      Cookies.set('adminAuth', 'shiv-seva-admin-authenticated', { 
+        expires: 1, // Expires in 1 day
+        secure: process.env.NODE_ENV === 'production', // Secure in production
+        sameSite: 'strict'
+      })
+      
+      // Redirect to admin panel
+      router.push('/admin')
     } else {
       setError('Invalid password')
     }

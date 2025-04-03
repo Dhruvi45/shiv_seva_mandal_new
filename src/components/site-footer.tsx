@@ -1,52 +1,51 @@
 // components/site-footer.tsx
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 py-12">
+    <footer className="bg-gray-100 py-6 mt-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row justify-between">
           <div>
-            <div className="flex items-center mb-4">
-              <div className="relative w-10 h-10 mr-2">
-                <Image
-                  src="/images/logo.png"
-                  alt="Shiv Seva Mandal Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="font-bold text-teal-700 text-lg">Shiv Seva Mandal</span>
-            </div>
-            <p className="text-gray-600">
-              Providing free medical equipment to those in need. Our mission is to make healthcare accessible to everyone.
+            <h3 className="font-bold text-teal-700 mb-2">Shiv Seva Mandal</h3>
+            <p className="text-gray-600 text-sm">
+              Providing free medical equipment to those in need
             </p>
           </div>
           
-          <div>
-            <h3 className="font-semibold text-teal-700 mb-4">Quick Links</h3>
-            <nav className="flex flex-col space-y-2">
-              <Link href="/" className="text-gray-600 hover:text-teal-700">Home</Link>
-              <Link href="/dashboard" className="text-gray-600 hover:text-teal-700">Available Equipment</Link>
-              <Link href="/about" className="text-gray-600 hover:text-teal-700">About Us</Link>
-              <Link href="/contact" className="text-gray-600 hover:text-teal-700">Contact</Link>
-            </nav>
+          <div className="mt-4 md:mt-0">
+            <h4 className="font-semibold text-gray-700 mb-2">Quick Links</h4>
+            <ul className="space-y-1 text-sm">
+              <li><Link href="/" className="text-gray-600 hover:text-teal-700">Home</Link></li>
+              <li><Link href="/dashboard" className="text-gray-600 hover:text-teal-700">Equipment</Link></li>
+              <li><Link href="/about" className="text-gray-600 hover:text-teal-700">About Us</Link></li>
+              <li><Link href="/contact" className="text-gray-600 hover:text-teal-700">Contact</Link></li>
+              <li>
+                {/* Hidden admin link with special CSS to make it very subtle */}
+                <Link 
+                  href="/admin-login" 
+                  className="text-gray-300 hover:text-gray-400 text-xs mt-8 inline-block"
+                  aria-label="Admin Access"
+                >
+                  Admin
+                </Link>
+              </li>
+            </ul>
           </div>
           
-          <div>
-            <h3 className="font-semibold text-teal-700 mb-4">Contact Us</h3>
-            <div className="space-y-2 text-gray-600">
-              <p>123 Health Street</p>
-              <p>Mumbai, Maharashtra</p>
-              <p>Phone: +91 98765 43210</p>
-              <p>Email: info@shivsevamandal.org</p>
-            </div>
+          <div className="mt-4 md:mt-0">
+            <h4 className="font-semibold text-gray-700 mb-2">Contact</h4>
+            <address className="text-sm text-gray-600 not-italic">
+              Shiv Seva Mandal<br />
+              123 Community St.<br />
+              Email: contact@shivsevamandal.org<br />
+              Phone: (123) 456-7890
+            </address>
           </div>
         </div>
         
-        <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Shiv Seva Mandal. All rights reserved.</p>
+        <div className="mt-8 pt-4 border-t border-gray-200 text-center text-sm text-gray-600">
+          &copy; {new Date().getFullYear()} Shiv Seva Mandal. All rights reserved.
         </div>
       </div>
     </footer>

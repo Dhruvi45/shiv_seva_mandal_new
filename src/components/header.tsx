@@ -1,7 +1,6 @@
 // components/header.tsx
 import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
 
 export default function Header() {
   return (
@@ -26,12 +25,6 @@ export default function Header() {
             <Link href="/about" className="text-gray-600 hover:text-teal-700">About</Link>
             <Link href="/contact" className="text-gray-600 hover:text-teal-700">Contact</Link>
           </nav>
-          
-          <div>
-            <Button asChild variant="ghost" className="text-teal-700 hover:bg-teal-50">
-              <Link href="/admin">Admin</Link>
-            </Button>
-          </div>
         </div>
       </div>
     </header>
