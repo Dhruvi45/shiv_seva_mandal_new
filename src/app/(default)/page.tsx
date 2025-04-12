@@ -8,16 +8,18 @@ export default function Home() {
   return (
     <div className="container mx-auto">
       <HeroSection />
-      
+
       <section className="py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-teal-700 mb-4">Our Mission</h2>
+
           <p className="text-lg max-w-3xl mx-auto text-gray-600">
             Shiv Seva Mandal is dedicated to providing free medical equipment to those in need.
             We believe healthcare should be accessible to everyone regardless of financial situation.
           </p>
+          
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="bg-white p-6 rounded-lg shadow-md border border-teal-100">
             <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4 mx-auto">
@@ -30,7 +32,7 @@ export default function Home() {
               We provide various medical equipment free of charge to those who need it most.
             </p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md border border-teal-100">
             <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4 mx-auto">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -42,7 +44,7 @@ export default function Home() {
               We are committed to supporting our community through compassionate service.
             </p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md border border-teal-100">
             <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4 mx-auto">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -55,37 +57,37 @@ export default function Home() {
             </p>
           </div>
         </div>
-        
+
         <div className="text-center">
           <Button asChild className="bg-teal-700 hover:bg-teal-800">
             <Link href="/dashboard">View Available Equipment</Link>
           </Button>
         </div>
       </section>
-      
+
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-teal-700 text-center mb-12">How It Works</h2>
-          
+
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-teal-700 text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
               <h3 className="text-xl font-semibold mb-2">Check Availability</h3>
               <p className="text-gray-600">Browse our available medical equipment inventory.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-teal-700 text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
               <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
               <p className="text-gray-600">Reach out to our team to request the equipment you need.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-teal-700 text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
               <h3 className="text-xl font-semibold mb-2">Receive Equipment</h3>
               <p className="text-gray-600">Pick up your equipment or arrange for delivery.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-teal-700 text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
               <h3 className="text-xl font-semibold mb-2">Return When Done</h3>
