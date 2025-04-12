@@ -2,8 +2,10 @@ import { getEquipmentById, updateEquipment } from '@/lib/actions'
 import EquipmentForm from '@/components/equipment-form'
 import { notFound } from 'next/navigation'
 
-export default async function EditEquipment({ params }: { params: { id: string } }) {
-  const equipment = await getEquipmentById(params.id)
+export default async function EditEquipment({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  
+  const equipment = await getEquipmentById(id)
   
   if (!equipment) {
     notFound()
@@ -11,7 +13,7 @@ export default async function EditEquipment({ params }: { params: { id: string }
   
   const updateEquipmentWithId = async (formData: FormData) => {
     'use server'
-    await updateEquipment(params.id, formData)
+    await updateEquipment(id, formData)
   }
   
   return (
