@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="flex flex-col min-h-screen">
           {/* Remove Header component here */}
-          <SecretCodeListener />
+          {/* <SecretCodeListener /> */}
           <main className="flex-grow">
             {children}
           </main>

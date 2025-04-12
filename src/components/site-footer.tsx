@@ -39,7 +39,7 @@ export default function SiteFooter() {
               Shiv Seva Mandal<br />
               123 Community St.<br />
               Email: contact@shivsevamandal.org<br />
-              Phone: (123) 456-7890
+              {/* Phone: (123) 456-7890 */}
             </address>
           </div>
         </div>
